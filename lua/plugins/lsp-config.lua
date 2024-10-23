@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright", "volar", "tsserver", "eslint", "tailwindcss" },
+				ensure_installed = { "lua_ls", "pyright", "volar", "ts_ls", "eslint", "tailwindcss" },
 				automatic_installation = true
 			})
 		end,
@@ -36,9 +36,9 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
-				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" }
+				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
@@ -46,16 +46,16 @@ return {
 			lspconfig.eslint.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.volar.setup({
+			lspconfig.vuels.setup({
 				capabilities = capabilities,
-				filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-				init_options = {
-					typescript = {
-						tsdk = "/usr/lib/node_modules/typescript/lib"
-					},
-					takeOverMode = true
-				}
 			})
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
+			-- lspconfig.volar.setup({
+			-- 	capabilities = capabilities,
+			-- 	filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+			-- })
 
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<C-Space>", vim.lsp.buf.hover, {})

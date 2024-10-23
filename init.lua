@@ -20,7 +20,7 @@ require("vim-options")
 require("lazy").setup("plugins")
 -- require("quarto").activate()
 
-vim.cmd.colorscheme("kanagawa-dragon")
+vim.cmd.colorscheme("bamboo")
 vim.api.nvim_set_hl(0, "MoltenVirtualText", { fg = "#999999" })
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#999999" })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#ffffff" })

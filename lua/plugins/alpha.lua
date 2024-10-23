@@ -18,7 +18,7 @@ return {
 		}
 
 		dashboard.opts.layout[1].val = 2
-		dashboard.opts.opts.margin = 7
+		-- dashboard.opts.opts.margin = 70
 
 		-- Send config to alpha
 		alpha.setup(dashboard.config)

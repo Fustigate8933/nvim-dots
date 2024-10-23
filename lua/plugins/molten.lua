@@ -25,7 +25,7 @@ return {
 			-- vim.g.molten_auto_open_output = true
 			-- vim.g.molten_cover_empty_lines = true
 			-- vim.g.molten_output_win_hide_on_leave = true
-
+			vim.api.nvim_set_hl(0, "MoltenCell", { bg = "NONE" })
 
 			vim.keymap.set(
 				"n",
